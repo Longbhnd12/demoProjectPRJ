@@ -70,39 +70,7 @@ public class process1 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-//        processRequest(request, response);
-
-//       đầu vào sử dụng request
-//      đầu ra sử dụng response
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-
-        String first = request.getParameter("firstname");
-        String last = request.getParameter("lastname");
-        String roll = request.getParameter("roll");
-
-        if (first == null || first.trim().isEmpty()
-                || last == null || last.trim().isEmpty()
-                || roll == null || roll.trim().isEmpty()) {
-            out.println("Please input info");
-            return;
-        }
-
-        String regex = "^(HS|HA|HE)\\d{6}$";
-        if (!roll.matches(regex)) {
-            out.println("Roll number is not valid");
-            return;
-        }
-
-        out.println("Student: " + last + " " + first + "<br>");
-        out.println("Roll number: " + roll);
-
-        
-
-    }
+  
 
     /**
      * Returns a short description of the servlet.
